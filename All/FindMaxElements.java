@@ -7,30 +7,29 @@ public class findMaxElements {
 	
 //	T(n) = O (n log n)
 	 private static void largest(int[] arr, int k) 
-	    {
+	    {	// k is  no of max ele you want
 	        // Sort the given array in reverse order
 	        //Arrays.sort(arr, Collections.reverseOrder()); 
 	        Arrays.sort(arr);
-	        int size= arr.length;
-		    for (int i = size - 1; i >= size - k; i--) 
+		    for (int i = arr.length - 1; i >= arr.length - k; i--) 
 		    System.out.print(arr[i] + " ");
 	    }
 
 	
 //	 Different approach
-	 private static void printlargest(int arr[], int size)
+	 private static void printlargest(int arr[])
 	    {
 	        int i, first, second, third;
 	   
 	        /* There should be atleast two elements */
-	        if (size < 3)
+	        if (arr.length < 3)
 	        {
 	            System.out.print(" Invalid Input ");
 	            return;
 	        }
 	       
 	        third = first = second = Integer.MIN_VALUE;
-	        for (i = 0; i < size ; i ++)
+	        for (i = 0; i < arr.length ; i ++)
 	        {
 	            /* If current element is smaller than
 	            first*/
@@ -65,7 +64,7 @@ public class findMaxElements {
 		int k = 3;
 		largest(arr,k);
 		//int n = sizeof(arr)/sizeof(arr[0]);
-		printlargest(arr, arr.length);
+		printlargest(arr);
 	}
 
 }
